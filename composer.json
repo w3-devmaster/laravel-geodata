@@ -1,0 +1,23 @@
+{
+    "name": "w3-devmaster/laravel-geodata",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "W3Devmaster\\GeoData\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "w3-devmaster",
+            "email": "apichat_pep@hotmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "W3Devmaster\\GeoData\\GeoServiceProvider"
+            ]
+        }
+    }
+}
