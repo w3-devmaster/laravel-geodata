@@ -31,9 +31,37 @@ use W3Devmaster\GeoData\GeoData;
 
 $geodata = new GeoData();
 $geographies = $geodata->geographies();
+$provinces = $geodata->provinces();
+$districts = $geodata->districts();
+$subDistricts = $geodata->subDistricts();
 
 // Or
 $geographies = GeoData::geographies();
+$provinces = GeoData::provinces();
+$districts = GeoData::districts();
+$subDistricts = GeoData::subDistricts();
+
+```
+
+Get relate data :
+
+```php
+use W3Devmaster\GeoData\GeoData;
+
+$province = GeoData::provinces()->first();
+
+$districts = $province->districts;
+
+```
+
+Get parent data :
+
+```php
+use W3Devmaster\GeoData\GeoData;
+
+$province = GeoData::provinces()->first();
+
+$geography = $province->geography;
 
 ```
 
