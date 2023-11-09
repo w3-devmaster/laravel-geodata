@@ -23,24 +23,6 @@ Install package datas :
 php artisan geodata:install
 ```
 
-[Optional] Add `Geo` facades to the `aliases` array in your `config/app.php` for use `Geo::class`:
-
-```php
-'aliases' => Facade::defaultAliases()->merge([
-        // 'Example' => App\Facades\Example::class,
-        ...,
-        'Geo' => W3Devmaster\GeoData\Facades\Geo::class,
-])->toArray(),
-```
-For can use
-```php
-use Geo;
-
-$geodata = new Geo();
-// Or
-$geographies = Geo::geographies();
-```
-
 ## Basic Use
 
 Get geography datas :
@@ -82,6 +64,25 @@ $province = GeoData::provinces()->first();
 
 $geography = $province->geography;
 
+```
+
+### Optional
+Add `Geo` facades to the `aliases` array in your `config/app.php` for use `Geo::class`:
+
+```php
+'aliases' => Facade::defaultAliases()->merge([
+        // 'Example' => App\Facades\Example::class,
+        ...,
+        'Geo' => W3Devmaster\GeoData\Facades\Geo::class,
+])->toArray(),
+```
+For can use
+```php
+use Geo;
+
+$geodata = new Geo();
+// Or
+$geographies = Geo::geographies();
 ```
 
 ### Changelog
