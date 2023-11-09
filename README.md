@@ -66,6 +66,15 @@ $geography = $province->geography;
 
 ```
 
+Use query scope and|or eloqent :
+
+```php
+use W3Devmaster\GeoData\GeoData;
+
+$provinces = GeoData::provinces()->findName('นครร')->get(); // Like Condition
+
+```
+
 ### Helpers
 
 Get data for all sector : 
@@ -75,6 +84,8 @@ $geographies = geographies();
 $provinces = provinces();
 $districts = districts();
 $subDistricts = subDistricts();
+
+$provinces = provinces()->findName('นครร')->get(); // Like Condition
 ```
 
 Get single data for all sector :
