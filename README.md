@@ -35,7 +35,7 @@ $provinces = $geodata->provinces();
 $districts = $geodata->districts();
 $subDistricts = $geodata->subDistricts();
 
-// Or
+// Or use static method
 $geographies = GeoData::geographies();
 $provinces = GeoData::provinces();
 $districts = GeoData::districts();
