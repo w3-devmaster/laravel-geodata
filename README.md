@@ -31,7 +31,14 @@ php artisan geodata:install
         ...,
         'Geo' => W3Devmaster\GeoData\Facades\Geo::class,
 ])->toArray(),
+```
+For can use
+```php
+use Geo;
 
+$geodata = new Geo();
+// Or
+$geographies = Geo::geographies();
 ```
 
 ## Basic Use
