@@ -10,23 +10,30 @@ Install with composer :
 ```bash
 composer require w3-devmaster/laravel-geodata
 ```
-Publish package config file :
+Publish package files :
 
 ```bash
-php artisan vendor:publish --provider="W3Devmaster\GeoData\GeoServiceProvider"
+php artisan geodata:publish
+```
+
+Install package datas :
+
+```bash
+php artisan geodata:install
 ```
 
 ## Basic Use
 
-Email Alert (send now) :
+Get geography datas :
 
 ```php
+use W3Devmaster\GeoData\GeoData;
 
-```
+$geodata = new GeoData();
+$geographies = $geodata->geographies();
 
-Line notify (send now) :
-
-```php
+// Or
+$geographies = GeoData::geographies();
 
 ```
 

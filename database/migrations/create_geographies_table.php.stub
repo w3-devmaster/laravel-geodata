@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create(config('geodata.tableName.geography'), function (Blueprint $table) {
+        Schema::create('geographies', function (Blueprint $table) {
             $table->id();
             $table->string('name_th');
             $table->string('name_en');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(config('geodata.tableName.geography'));
+        Schema::dropIfExists('geographies');
     }
 };

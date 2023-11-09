@@ -15,7 +15,7 @@ class GeoServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/geodata.php', 'geodata');
+
 
         // dd('app is works.');
         // $this->app->singleton(Notibot::class,function(){
@@ -29,28 +29,24 @@ class GeoServiceProvider extends ServiceProvider
             return;
         }
 
-        $this->publishes([
-            __DIR__.'/../config/geodata.php' => config_path('geodata.php'),
-        ], 'config');
-
-        if (empty(glob(database_path('migrations/*_create_' . config('geodata.tableName.geography') . '_table.php')))) {
+        if (empty(glob(database_path('migrations/*_create_geographies_table.php')))) {
             $this->publishes([
-                __DIR__.'/../database/migrations/create_' . config('geodata.tableName.geography') . '_table.php.stub' => database_path('migrations/2023_01_01_000000_create_' . config('geodata.tableName.geography') . '_table.php'),
+                __DIR__.'/../database/migrations/create_geographies_table.php.stub' => database_path('migrations/2023_01_01_000000_create_geographies_table.php'),
             ], 'migrations');
         }
-        if (empty(glob(database_path('migrations/*_create_' . config('geodata.tableName.province') . '_table.php')))) {
+        if (empty(glob(database_path('migrations/*_create_provinces_table.php')))) {
             $this->publishes([
-                __DIR__.'/../database/migrations/create_' . config('geodata.tableName.province') . '_table.php.stub' => database_path('migrations/2023_01_01_000001_create_' . config('geodata.tableName.province') . '_table.php'),
+                __DIR__.'/../database/migrations/create_provinces_table.php.stub' => database_path('migrations/2023_01_01_000001_create_provinces_table.php'),
             ], 'migrations');
         }
-        if (empty(glob(database_path('migrations/*_create_' . config('geodata.tableName.district') . '_table.php')))) {
+        if (empty(glob(database_path('migrations/*_create_districts_table.php')))) {
             $this->publishes([
-                __DIR__.'/../database/migrations/create_' . config('geodata.tableName.district') . '_table.php.stub' => database_path('migrations/2023_01_01_000002_create_' . config('geodata.tableName.district') . '_table.php'),
+                __DIR__.'/../database/migrations/create_districts_table.php.stub' => database_path('migrations/2023_01_01_000002_create_districts_table.php'),
             ], 'migrations');
         }
-        if (empty(glob(database_path('migrations/*_create_' . config('geodata.tableName.subDistrict') . '_table.php')))) {
+        if (empty(glob(database_path('migrations/*_create_sub_districts_table.php')))) {
             $this->publishes([
-                __DIR__.'/../database/migrations/create_' . config('geodata.tableName.subDistrict') . '_table.php.stub' => database_path('migrations/2023_01_01_000003_create_' . config('geodata.tableName.subDistrict') . '_table.php'),
+                __DIR__.'/../database/migrations/create_sub_districts_table.php.stub' => database_path('migrations/2023_01_01_000003_create_sub_districts_table.php'),
             ], 'migrations');
         }
 

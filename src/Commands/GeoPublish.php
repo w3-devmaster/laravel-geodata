@@ -21,24 +21,26 @@ class GeoPublish extends Command
         $headers = ['Type','File','Status',];
         $rows = [];
 
-        if(file_exists(config_path('geodata.php'))){
-            $rows[] = ['config','config/geodata.php','Already'];
-        }else{
-            $rows[] = ['config','config/geodata.php','Success'];
-        }
+        $files = [
+            'migrations/2023_01_01_000000_create_geographies_table.php',
+            'migrations/2023_01_01_000001_create_provinces_table.php',
+            'migrations/2023_01_01_000002_create_districts_table.php',
+            'migrations/2023_01_01_000003_create_sub_districts_table.php',
+        ];
 
-        foreach (config('geodata.tableName') as $value) {
-            if(empty(glob(database_path('migrations/*_create_' . $value . '_table.php')))){
-                $rows[] = ['migraion','migrations/2023_01_01_00000*_create_' . $value . '_table.php','Success'];
+        foreach ($files as $value) {
+            if(file_exists(database_path($value))){
+                $rows[] = ['migraion',$value,'Success'];
             }else{
-                $rows[] = ['migraion','migrations/2023_01_01_00000*_create_' . $value . '_table.php','Already'];
+                $rows[] = ['migraion',$value,'Already'];
             }
         }
+
 
         $this->table($headers, $rows);
         $this->newLine(1);
         Artisan::call('vendor:publish',$arguments);
 
-        $this->info('Geodata is successfuly published. "use: php artisan migrate && php artisan geodata:install" ');
+        $this->info('Geodata is successfuly published. " use: php artisan geodata:install " ');
     }
 }

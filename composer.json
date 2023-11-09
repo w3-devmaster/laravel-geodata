@@ -1,5 +1,6 @@
 {
     "name": "w3-devmaster/laravel-geodata",
+    "description": "Geo data package for laravel framework",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -12,7 +13,9 @@
             "email": "apichat_pep@hotmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "php": ">=7.4"
+    },
     "extra": {
         "laravel": {
             "providers": [
