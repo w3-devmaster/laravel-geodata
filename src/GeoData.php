@@ -17,6 +17,11 @@ class GeoData {
 
     public function __construct()
     {
+        $this->initializeModel();
+    }
+
+    protected function initializeModel()
+    {
         self::$geographies = app(Geography::class);
         self::$provinces = app(Province::class);
         self::$districts = app(District::class);
@@ -38,5 +43,5 @@ class GeoData {
     public static function subDistricts() {
         return self::$subDistricts ?: app(SubDistrict::class);
     }
-
+ 
 }

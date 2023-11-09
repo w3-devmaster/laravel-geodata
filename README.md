@@ -10,6 +10,18 @@ Install with composer :
 ```bash
 composer require w3-devmaster/laravel-geodata
 ```
+
+[Optional] Add `Geo` facades to the `aliases` array in your `config/app.php` for use `Geo::class`:
+
+```php
+'aliases' => Facade::defaultAliases()->merge([
+        // 'Example' => App\Facades\Example::class,
+        ...,
+        'Geo' => W3Devmaster\GeoData\Facades\Geo::class,
+])->toArray(),
+
+```
+
 Publish package files :
 
 ```bash

@@ -9,18 +9,16 @@ class GeoServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->registerHelpers();
         $this->registerPublishables();
         $this->registerCommands();
     }
 
     public function register()
     {
-
-
-        // dd('app is works.');
-        // $this->app->singleton(Notibot::class,function(){
-        //     return new Notibot();
-        // });
+        $this->app->singleton('geo', function ($app) {
+            return $this->app->make(GeoData::class);
+        });
     }
 
     protected function registerPublishables(): void
@@ -63,6 +61,13 @@ class GeoServiceProvider extends ServiceProvider
             Commands\GeoPublish::class,
             Commands\GeoInstall::class,
         ]);
+    }
+
+    public function registerHelpers()
+    {
+        if (file_exists($file = __DIR__ . '/Helpers.php')) {
+            require $file;
+        }
     }
 
 }
