@@ -66,6 +66,26 @@ $geography = $province->geography;
 
 ```
 
+### Helpers
+
+Get data for all sector : 
+
+```php
+$geographies = geographies();
+$provinces = provinces();
+$districts = districts();
+$subDistricts = subDistricts();
+```
+
+Get single data for all sector :
+
+```php
+$geo_name = geography($id)->name_th;
+$province_name = province($id)->name_th;
+$district_name = district($id)->name_th;
+$sub_dis_name = subDistrict($id)->zip_code;
+```
+
 ### Optional
 Add `Geo` facades to the `aliases` array in your `config/app.php` for use `Geo::class`:
 
