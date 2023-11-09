@@ -1,4 +1,4 @@
-# Geo Data Library for Laravel
+# Geo Data Library for Laravel (Thailand)
 
 [![Latest Version](https://img.shields.io/github/release/w3-devmaster/laravel-geodata.svg?style=flat-square)](https://github.com/w3-devmaster/laravel-geodata/releases)
 [![Total Downloads](https://img.shields.io/packagist/dt/w3-devmaster/laravel-geodata.svg?style=flat-square)](https://packagist.org/packages/w3-devmaster/laravel-geodata)
